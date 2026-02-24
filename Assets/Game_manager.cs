@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
         if (gameOver) return;
 
         timeRemaining -= Time.deltaTime;
-        timerText.text = "Time: " + Mathf.Ceil(timeRemaining);
+        if (timerText != null)
+        {
+            timerText.text = "Time: " + Mathf.Ceil(timeRemaining);
+        }
 
         if (timeRemaining <= 0)
         {
