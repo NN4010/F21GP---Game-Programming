@@ -2,46 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    public float rotationSpeed = 720f;
-    private CharacterController controller;
-    private Vector3 velocity;
-    private float gravity = -9.81f;
+    public float jumpForce = 5f;
+    public float pickupRange = 2f;
+
+    private Rigidbody rb;
+    private bool isGrounded;
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        // Input
-        float moveX = -Input.GetAxis("Horizontal"); // notice the minus sign
-        float moveZ = -Input.GetAxis("Vertical");
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
         Vector3 move = new Vector3(moveX, 0, moveZ);
+        transform.Translate(move * speed * Time.deltaTime);
 
-        // Movement
-        if (move.magnitude > 0.1f)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            // Rotate toward movement
-            Quaternion targetRotation = Quaternion.LookRotation(move);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        // Apply movement in local forward direction
-        controller.Move(move.normalized * speed * Time.deltaTime);
-
-        // Apply gravity
-        if (!controller.isGrounded)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
+            TryPickup();
         }
-        else
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        isGrounded = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        isGrounded = false;
+    }
+
+    void TryPickup()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, pickupRange);
+
+        foreach (Collider hit in hits)
         {
-            velocity.y = 0f; // reset when on ground
+            RallyPoint rp = hit.GetComponent<RallyPoint>();
+            if (rp != null)
+            {
+                if (rp.TakeSnack())
+                {
+                    GameManager.instance.AddSnack(1);
+                }
+            }
         }
     }
 }
