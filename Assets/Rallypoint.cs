@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class RallyPoint : MonoBehaviour
 {
-    public int foodCapacity = 5;   // Total snacks here
-    public GameObject catPrefab;   // Cat object
-    public int catCount = 3;       // Cats near this point
-    public float spawnRadius = 3f;
+    public int rallyValue = 1;
+    public AudioClip collectSound;
 
-    void Start()
+    private bool collected = false;
+
+    void Update()
     {
-        SpawnCats();
+        // Simple rotation for visual effect
+        transform.Rotate(0, 100 * Time.deltaTime, 0);
     }
 
-    void SpawnCats()
+    private void OnTriggerEnter(Collider other)
     {
-        for (int i = 0; i < catCount; i++)
+        if (other.CompareTag("Player") && !collected)
         {
-            Vector3 randomPos = transform.position +
-                new Vector3(Random.Range(-spawnRadius, spawnRadius), 0,
-                            Random.Range(-spawnRadius, spawnRadius));
+            collected = true;
 
-            Instantiate(catPrefab, randomPos, Quaternion.identity);
-        }
-    }
+            // Add rally points & food capacity
+            GameManager.instance.AddRallyPoint(rallyValue);
 
-    public bool TakeSnack()
-    {
-        if (foodCapacity > 0)
-        {
-            foodCapacity--;
-            return true;
+            // Play sound
+            if (collectSound != null)
+            {
+                AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            }
+
+            // Optional: small scale effect before destroy
+            Destroy(gameObject);
         }
-        return false;
     }
 }
