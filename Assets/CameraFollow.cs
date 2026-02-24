@@ -1,24 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;              // Drag your player here
-    public Vector3 offset = new Vector3(0, 1, 2); // Behind & above
-    public float followSpeed = 0.125f;    // Smooth movement
-    public float rotationSpeed = 5f;      // Smooth rotation
+    public Transform player;
 
-    private void LateUpdate()
+    public float distance = 6f;
+    public float height = 3f;
+    public float rotationSpeed = 200f;
+
+    private float currentYaw = 0f;
+
+    void Start()
     {
-        if (player == null) return;
+        currentYaw = player.eulerAngles.y;
+    }
 
-        // --- Position the camera behind the player relative to their rotation ---
-        Vector3 desiredPosition = player.position + player.rotation * offset;
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed);
+    void LateUpdate()
+    {
+        if (!player) return;
 
-        // --- Rotate the camera to match the player's forward direction ---
-        Quaternion targetRotation = Quaternion.Euler(player.eulerAngles.x, player.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // 鼠标左右控制旋转
+        float mouseX = Input.GetAxis("Mouse X");
+        currentYaw += mouseX * rotationSpeed * Time.deltaTime;
+
+        // 计算相机位置
+        Quaternion rotation = Quaternion.Euler(0, currentYaw, 0);
+        Vector3 offset = rotation * new Vector3(0, height, -distance);
+
+        transform.position = player.position + offset;
+
+        // 看向玩家
+        transform.LookAt(player.position + Vector3.up * 1.5f);
     }
 }
