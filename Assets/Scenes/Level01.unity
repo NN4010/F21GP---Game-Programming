@@ -366,10 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &38148896
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -450,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 38148894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 4, z: 17}
+  m_LocalPosition: {x: 17, y: 2.5, z: 17}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -488,10 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &58763775
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -572,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 58763773}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 3, z: 8}
+  m_LocalPosition: {x: 17, y: 2.5, z: 8}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -678,7 +674,7 @@ Transform:
   m_GameObject: {fileID: 80605453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -696,10 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!1001 &93353380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1171,7 +1165,7 @@ Transform:
   m_GameObject: {fileID: 166861308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 1, z: 17}
+  m_LocalPosition: {x: 13, y: 0.5, z: 17}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1276,7 +1270,7 @@ Transform:
   m_GameObject: {fileID: 169867048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -6}
+  m_LocalPosition: {x: 0, y: 1, z: -6}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1314,10 +1308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &177647892
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1398,7 +1390,7 @@ Transform:
   m_GameObject: {fileID: 177647890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 4, z: 10}
+  m_LocalPosition: {x: -5, y: 2.5, z: 10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1436,8 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdcd834ea6ea984d89ccc3d38a75462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: 9, y: 3, z: 10}
-  pointB: {x: 15, y: 3, z: 10}
+  pointA: {x: 9, y: 2, z: 10}
+  pointB: {x: 15, y: 2, z: 10}
   speed: 2
 --- !u!65 &177906871
 BoxCollider:
@@ -1519,7 +1511,7 @@ Transform:
   m_GameObject: {fileID: 177906869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 3, z: 10}
+  m_LocalPosition: {x: 9, y: 2, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1745,7 +1737,7 @@ Transform:
   m_GameObject: {fileID: 220562124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 3, z: 10}
+  m_LocalPosition: {x: 17, y: 2, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1783,10 +1775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &231941098
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1867,7 +1857,7 @@ Transform:
   m_GameObject: {fileID: 231941096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 5, z: 22}
+  m_LocalPosition: {x: -11, y: 2.5, z: 22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2010,10 +2000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &296608396
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2094,7 +2082,7 @@ Transform:
   m_GameObject: {fileID: 296608394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 2, z: 22}
+  m_LocalPosition: {x: -5, y: 1, z: 22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2152,6 +2140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_bluebox
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 132c9713e0a9b75499dd7c794ff5879a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2189,10 +2181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &323359010
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2416,10 +2406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &337158609
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2500,7 +2488,7 @@ Transform:
   m_GameObject: {fileID: 337158607}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 4, z: -6}
+  m_LocalPosition: {x: 19, y: 2.5, z: -6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2538,10 +2526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &342032742
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2622,7 +2608,7 @@ Transform:
   m_GameObject: {fileID: 342032740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 2, z: 18}
+  m_LocalPosition: {x: -22, y: 2.5, z: 18}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2838,10 +2824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &379727920
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2922,7 +2906,7 @@ Transform:
   m_GameObject: {fileID: 379727918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 3, z: 17}
+  m_LocalPosition: {x: 15, y: 2, z: 17}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3027,7 +3011,7 @@ Transform:
   m_GameObject: {fileID: 396569111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 4, z: 22}
+  m_LocalPosition: {x: -11, y: 1.5, z: 22}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3132,7 +3116,7 @@ Transform:
   m_GameObject: {fileID: 397198219}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -20}
+  m_LocalPosition: {x: 0, y: 1, z: -20}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3170,10 +3154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &421285786
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3359,7 +3341,7 @@ Transform:
   m_GameObject: {fileID: 431763323}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 0, z: 4}
+  m_LocalPosition: {x: 17, y: 1, z: 4}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3613,10 +3595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &492732277
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3697,7 +3677,7 @@ Transform:
   m_GameObject: {fileID: 492732275}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 5, z: 3}
+  m_LocalPosition: {x: 13, y: 3, z: 3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3802,7 +3782,7 @@ Transform:
   m_GameObject: {fileID: 511470161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 1, z: 10}
+  m_LocalPosition: {x: -9, y: 0.5, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3840,10 +3820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &533971337
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3924,7 +3902,7 @@ Transform:
   m_GameObject: {fileID: 533971335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 4, z: 20}
+  m_LocalPosition: {x: 17, y: 2.5, z: 20}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4035,10 +4013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &536685279
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4119,7 +4095,7 @@ Transform:
   m_GameObject: {fileID: 536685277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 4, z: 22}
+  m_LocalPosition: {x: -9, y: 2, z: 22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4157,10 +4133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &573528722
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4241,7 +4215,7 @@ Transform:
   m_GameObject: {fileID: 573528720}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -6}
+  m_LocalPosition: {x: 0, y: 2, z: -6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4279,10 +4253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &600928545
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4363,7 +4335,7 @@ Transform:
   m_GameObject: {fileID: 600928543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -4}
+  m_LocalPosition: {x: 0, y: 1.5, z: -4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4401,10 +4373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &616959999
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4485,7 +4455,7 @@ Transform:
   m_GameObject: {fileID: 616959997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 2, z: -10}
+  m_LocalPosition: {x: 19, y: 1.5, z: -10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4735,10 +4705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &662045430
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5182,9 +5150,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9188608849454181664, guid: b24a22bcaeab35247842c0ab6ff9001e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 664868434}
-    - targetCorrespondingSourceObject: {fileID: 8335172058648708637, guid: b24a22bcaeab35247842c0ab6ff9001e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449033902}
   m_SourcePrefab: {fileID: 100100000, guid: b24a22bcaeab35247842c0ab6ff9001e, type: 3}
 --- !u!1 &664868428 stripped
 GameObject:
@@ -5365,7 +5330,7 @@ Transform:
   m_GameObject: {fileID: 670047138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -18}
+  m_LocalPosition: {x: 0, y: 0.5, z: -18}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5761,7 +5726,7 @@ Transform:
   m_GameObject: {fileID: 711189777}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 2, z: -6}
+  m_LocalPosition: {x: 10, y: 1, z: -6}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5866,7 +5831,7 @@ Transform:
   m_GameObject: {fileID: 714207308}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 3, z: 3}
+  m_LocalPosition: {x: 13, y: 1.5, z: 3}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6009,10 +5974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &766267754
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6093,7 +6056,7 @@ Transform:
   m_GameObject: {fileID: 766267752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 3, z: -6}
+  m_LocalPosition: {x: 8, y: 2, z: -6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6198,7 +6161,7 @@ Transform:
   m_GameObject: {fileID: 798728232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 3, z: 17}
+  m_LocalPosition: {x: 17, y: 1.5, z: 17}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6303,7 +6266,7 @@ Transform:
   m_GameObject: {fileID: 807908562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 3, z: -6}
+  m_LocalPosition: {x: 19, y: 1.5, z: -6}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6341,10 +6304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &833204844
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6425,7 +6386,7 @@ Transform:
   m_GameObject: {fileID: 833204842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -18}
+  m_LocalPosition: {x: 0, y: 1.5, z: -18}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6635,7 +6596,7 @@ Transform:
   m_GameObject: {fileID: 836515130}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 3, z: 22}
+  m_LocalPosition: {x: -9, y: 1, z: 22}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7004,10 +6965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &892596175
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7088,7 +7047,7 @@ Transform:
   m_GameObject: {fileID: 892596173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 4, z: 3}
+  m_LocalPosition: {x: 13, y: 2.5, z: 3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7193,7 +7152,7 @@ Transform:
   m_GameObject: {fileID: 912145006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 2, z: 10}
+  m_LocalPosition: {x: -7, y: 1, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7231,10 +7190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &926135232
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7315,7 +7272,7 @@ Transform:
   m_GameObject: {fileID: 926135230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 4, z: 10}
+  m_LocalPosition: {x: 7, y: 3.5, z: 10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7684,7 +7641,7 @@ Transform:
   m_GameObject: {fileID: 1020888850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 1, z: 3}
+  m_LocalPosition: {x: 9, y: 0.5, z: 3}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7789,7 +7746,7 @@ Transform:
   m_GameObject: {fileID: 1051027848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 3, z: 10}
+  m_LocalPosition: {x: 7, y: 2.5, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7999,7 +7956,7 @@ Transform:
   m_GameObject: {fileID: 1069586112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 2, z: 8}
+  m_LocalPosition: {x: 17, y: 1.5, z: 8}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8104,7 +8061,7 @@ Transform:
   m_GameObject: {fileID: 1074226176}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -4}
+  m_LocalPosition: {x: 0, y: 0.5, z: -4}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8142,10 +8099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1096007736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8331,7 +8286,7 @@ Transform:
   m_GameObject: {fileID: 1138268419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 1, z: 20}
+  m_LocalPosition: {x: 13, y: 0.5, z: 20}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8369,10 +8324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1138912790
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8453,7 +8406,7 @@ Transform:
   m_GameObject: {fileID: 1138912788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 3, z: 20}
+  m_LocalPosition: {x: 15, y: 2, z: 20}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8491,10 +8444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1145439496
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8575,7 +8526,7 @@ Transform:
   m_GameObject: {fileID: 1145439494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 2, z: 20}
+  m_LocalPosition: {x: 13, y: 1.5, z: 20}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9105,10 +9056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1198275771
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9189,7 +9138,7 @@ Transform:
   m_GameObject: {fileID: 1198275769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 2, z: 10}
+  m_LocalPosition: {x: -9, y: 1.5, z: 10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9294,7 +9243,7 @@ Transform:
   m_GameObject: {fileID: 1246672198}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 2, z: 3}
+  m_LocalPosition: {x: 11, y: 1, z: 3}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9437,10 +9386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1279759818
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9731,7 +9678,7 @@ Transform:
   m_GameObject: {fileID: 1331293269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 1, z: 22}
+  m_LocalPosition: {x: -5, y: 0, z: 22}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9875,10 +9822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1335982494
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9959,7 +9904,7 @@ Transform:
   m_GameObject: {fileID: 1335982492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -20}
+  m_LocalPosition: {x: 0, y: 2, z: -20}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9997,10 +9942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1337043386
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10186,7 +10129,7 @@ Transform:
   m_GameObject: {fileID: 1352416392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 2, z: 22}
+  m_LocalPosition: {x: -7, y: 0.5, z: 22}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10291,7 +10234,7 @@ Transform:
   m_GameObject: {fileID: 1352708742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 1, z: 20}
+  m_LocalPosition: {x: 9, y: 0.5, z: 20}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10329,10 +10272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1372621577
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10413,7 +10354,7 @@ Transform:
   m_GameObject: {fileID: 1372621575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 2, z: -6}
+  m_LocalPosition: {x: 12, y: 1.5, z: -6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10451,8 +10392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdcd834ea6ea984d89ccc3d38a75462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: -22, y: 1, z: 18}
-  pointB: {x: -22, y: 1, z: 20}
+  pointA: {x: -22, y: 1.5, z: 18}
+  pointB: {x: -22, y: 1.5, z: 20}
   speed: 2
 --- !u!65 &1433526548
 BoxCollider:
@@ -10534,7 +10475,7 @@ Transform:
   m_GameObject: {fileID: 1433526546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 1, z: 18}
+  m_LocalPosition: {x: -22, y: 1.5, z: 18}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10788,7 +10729,7 @@ Transform:
   m_GameObject: {fileID: 1472720409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 3, z: 10}
+  m_LocalPosition: {x: -3, y: 1.5, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10826,10 +10767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1476196307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10948,10 +10887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1482719658
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11177,10 +11114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1530952704
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11299,8 +11234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdcd834ea6ea984d89ccc3d38a75462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: 2, y: 2, z: -6}
-  pointB: {x: 8, y: 2, z: -6}
+  pointA: {x: 2, y: 1, z: -6}
+  pointB: {x: 8, y: 1, z: -6}
   speed: 2
 --- !u!65 &1543813897
 BoxCollider:
@@ -11382,7 +11317,7 @@ Transform:
   m_GameObject: {fileID: 1543813895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: -6}
+  m_LocalPosition: {x: 2, y: 1, z: -6}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11488,7 +11423,7 @@ Transform:
   m_GameObject: {fileID: 1549295710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19, y: 1, z: 22}
+  m_LocalPosition: {x: -19, y: 1.5, z: 22}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11506,8 +11441,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdcd834ea6ea984d89ccc3d38a75462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: -19, y: 1, z: 22}
-  pointB: {x: -22, y: 1, z: 22}
+  pointA: {x: -19, y: 1.5, z: 22}
+  pointB: {x: -22, y: 1.5, z: 22}
   speed: 1
 --- !u!1 &1565213712
 GameObject:
@@ -12155,10 +12090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1663751413
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12239,7 +12172,7 @@ Transform:
   m_GameObject: {fileID: 1663751411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 2, z: 3}
+  m_LocalPosition: {x: 17, y: 2.5, z: 3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12344,7 +12277,7 @@ Transform:
   m_GameObject: {fileID: 1695299008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 1, z: -10}
+  m_LocalPosition: {x: 19, y: 0.5, z: -10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12449,7 +12382,7 @@ Transform:
   m_GameObject: {fileID: 1708878232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 1, z: 3}
+  m_LocalPosition: {x: 17, y: 1.5, z: 3}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12554,7 +12487,7 @@ Transform:
   m_GameObject: {fileID: 1732791520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 3, z: 10}
+  m_LocalPosition: {x: -5, y: 1.5, z: 10}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12659,7 +12592,7 @@ Transform:
   m_GameObject: {fileID: 1754147680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.42261827, w: 0.9063079}
-  m_LocalPosition: {x: -14, y: 2, z: 22}
+  m_LocalPosition: {x: -13.5, y: -0.5, z: 22}
   m_LocalScale: {x: 5, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12897,7 +12830,7 @@ Transform:
   m_GameObject: {fileID: 1774429257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 2, z: 20}
+  m_LocalPosition: {x: 15, y: 1, z: 20}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12935,10 +12868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1822518591
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13019,7 +12950,7 @@ Transform:
   m_GameObject: {fileID: 1822518589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 3, z: -8}
+  m_LocalPosition: {x: 19, y: 2, z: -8}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13321,7 +13252,7 @@ Transform:
   m_GameObject: {fileID: 1869641465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 1, z: -6}
+  m_LocalPosition: {x: 12, y: 0.5, z: -6}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13359,10 +13290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1870662448
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13443,7 +13372,7 @@ Transform:
   m_GameObject: {fileID: 1870662446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 6, z: 22}
+  m_LocalPosition: {x: -11, y: 3, z: 22}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13786,7 +13715,7 @@ Transform:
   m_GameObject: {fileID: 1885826624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 3, z: 20}
+  m_LocalPosition: {x: 17, y: 1.5, z: 20}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14091,10 +14020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &1995073661
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14213,10 +14140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &2008305882
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14297,7 +14222,7 @@ Transform:
   m_GameObject: {fileID: 2008305880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 2, z: 20}
+  m_LocalPosition: {x: 9, y: 1.5, z: 20}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14612,7 +14537,7 @@ Transform:
   m_GameObject: {fileID: 2054818147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 2, z: 17}
+  m_LocalPosition: {x: 15, y: 1, z: 17}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15091,10 +15016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &2102423525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15213,10 +15136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &2107582567
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15297,7 +15218,7 @@ Transform:
   m_GameObject: {fileID: 2107582565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17, y: 4, z: 10}
+  m_LocalPosition: {x: 17, y: 3, z: 10}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15402,7 +15323,7 @@ Transform:
   m_GameObject: {fileID: 2118920494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19, y: 2, z: -8}
+  m_LocalPosition: {x: 19, y: 1, z: -8}
   m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15440,10 +15361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c6478c0cde80b94ba6bb25f5dae4110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodCapacity: 5
-  catPrefab: {fileID: 0}
-  catCount: 3
-  spawnRadius: 3
+  rallyValue: 1
+  collectSound: {fileID: 0}
 --- !u!135 &2145143429
 SphereCollider:
   m_ObjectHideFlags: 0
