@@ -35,8 +35,24 @@ public class RallyPoint : MonoBehaviour
                 AudioSource.PlayClipAtPoint(collectSound, transform.position);
             }
 
-            // Optional: small scale effect before destroy
-            Destroy(gameObject);
+            // Optional: small scale pop effect
+StartCoroutine(PopAndDestroy());
+
+IEnumerator PopAndDestroy()
+{
+    Vector3 originalScale = transform.localScale;
+    float elapsed = 0f;
+    float duration = 0.2f;
+
+    while (elapsed < duration)
+    {
+        transform.localScale = Vector3.Lerp(originalScale, originalScale * 1.5f, elapsed / duration);
+        elapsed += Time.deltaTime;
+        yield return null;
+    }
+
+    Destroy(gameObject);
+}
         }
     }
 }
