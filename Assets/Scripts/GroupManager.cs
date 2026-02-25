@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GroupManager : MonoBehaviour
 {
@@ -43,17 +44,37 @@ public class GroupManager : MonoBehaviour
 
     void ComputePath()
     {
-        if (members.Count == 0) return;
+        if (members.Count == 0)
+        {
+            Debug.LogWarning("[ComputePath] Operation cancelled: Members count is 0.");
+            return;
+        }
+        
+        IGroupMember leader = members.OrderBy(m => Vector3.Distance(m.GetPosition(), player.position)).First();
 
-        Vector3 groupCenter = GetGroupCenter();
+        Debug.Log($"[ComputePath] Group leader: {leader.GetPosition().ToString("F3")}, player position: {player.position.ToString("F3")}");
 
-        Node startNode = graph.GetClosestNode(groupCenter);
+        Node startNode = graph.GetClosestNode(leader.GetPosition());
         Node targetNode = graph.GetClosestNode(player.position);
 
         if (startNode == null || targetNode == null)
+        {
+            Debug.LogError($"[ComputePath] Failed: {(startNode == null ? "StartNode" : "TargetNode")} is null. Check if the position is outside the Graph bounds.");
             return;
+        }
+
+        Debug.Log($"[ComputePath] Pathfinding from Node: {startNode.position} to Node: {targetNode.position}");
 
         currentPath = AStar.FindPath(startNode, targetNode);
+
+        if (currentPath != null && currentPath.Count > 0)
+        {
+            Debug.Log($"[ComputePath] Success! Path found. Waypoints: {currentPath.Count}");
+        }
+        else
+        {
+            Debug.LogWarning("[ComputePath] Done, but no valid path was found between nodes.");
+        }
     }
 
     Vector3 GetGroupCenter()
@@ -83,4 +104,5 @@ public class GroupManager : MonoBehaviour
     {
         return currentPath;
     }
+    public List<IGroupMember> GetAllMembers() => members;
 }

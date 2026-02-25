@@ -1,107 +1,83 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using System.Collections.Generic;
 
 public class NavigationGraph : MonoBehaviour
 {
-    [Header("Graph Settings")]
-    public float walkConnectionDistance = 3f;
-    public float jumpConnectionDistance = 5f;
-    public float maxJumpHeight = 2f;
+    public float nodeSpacing = 1.5f; // 节点间距
+    public Vector2 gridSize = new Vector2(20, 20);
+    public List<Node> allNodes = new List<Node>();
+    public static NavigationGraph Instance;
 
-    public List<Node> nodes = new List<Node>();
-
-    void Awake()
-    {
-        BuildGraph();
-    }
-
-    void BuildGraph()
-    {
-        nodes.Clear();
-
-        // 找到场景所有 NodePoint
-        NodePoint[] points = FindObjectsOfType<NodePoint>();
-
-        // 创建 Node 数据
-        foreach (var p in points)
-        {
-            nodes.Add(new Node(p.transform.position));
+    public float minRebuildInterval = 0.5f;
+    private float lastRebuildTime = -999f;
+    private bool graphDirty = false;
+    void Awake() { 
+        Debug.Log($"[NavigationGraph] Awake");
+        Instance = this;
+        GenerateGraph(); 
         }
 
-        // 建立连接
-        for (int i = 0; i < nodes.Count; i++)
-        {
-            for (int j = i + 1; j < nodes.Count; j++)
-            {
-                TryConnect(nodes[i], nodes[j]);
+    void Update()
+    {
+        if (!graphDirty) return;
+
+        if (Time.time - lastRebuildTime < minRebuildInterval)
+            return;
+
+        GenerateGraph();
+
+        graphDirty = false;
+        lastRebuildTime = Time.time;
+    }
+
+    public void GenerateGraph()
+    {
+        allNodes.Clear();
+        Debug.Log($"[Graph] Starting generation at {transform.position}. Grid: {gridSize}");
+
+        int attemptCount = 0;
+        for (float x = -gridSize.x/2; x < gridSize.x/2; x += nodeSpacing) {
+            for (float z = -gridSize.y/2; z < gridSize.y/2; z += nodeSpacing) {
+                attemptCount++;
+                Vector3 pos = transform.position + new Vector3(x, 0.5f, z); // 稍微抬高一点 Y
+
+                // 增加搜索半径到 2.0f 确保能抓到地面
+                if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 2.0f, NavMesh.AllAreas)) {
+                    allNodes.Add(new Node(hit.position));
+                }
+            }
+        }
+
+        Debug.Log($"[Graph] Attempted to sample {attemptCount} points.");
+        Debug.Log($"[Graph] Successfully created {allNodes.Count} nodes.");
+
+        if (allNodes.Count == 0) {
+            Debug.LogError("!!! ALLNODES IS ZERO !!! 1. Check if NavMesh is Baked. 2. Check if object is near the floor.");
+        }
+        // 2. 连线：使用 Raycast 避开墙壁
+        foreach (Node a in allNodes) {
+            foreach (Node b in allNodes) {
+                float dist = Vector3.Distance(a.position, b.position);
+                if (dist > 0 && dist <= nodeSpacing * 1.5f) {
+                    if (!NavMesh.Raycast(a.position, b.position, out NavMeshHit hit, NavMesh.AllAreas))
+                        a.edges.Add(new Edge(b, dist, EdgeType.Walk));
+                }
             }
         }
     }
 
-    void TryConnect(Node a, Node b)
-    {
-        float horizontalDist = Vector3.Distance(
-            new Vector3(a.position.x, 0, a.position.z),
-            new Vector3(b.position.x, 0, b.position.z)
-        );
-
-        float heightDiff = Mathf.Abs(a.position.y - b.position.y);
-
-        // Walk 连接
-        if (horizontalDist <= walkConnectionDistance && heightDiff < 0.5f)
-        {
-            float cost = horizontalDist;
-            a.edges.Add(new Edge(b, cost, EdgeType.Walk));
-            b.edges.Add(new Edge(a, cost, EdgeType.Walk));
+    public Node GetClosestNode(Vector3 pos) {
+        Node best = null; float minDist = float.MaxValue;
+        foreach(var n in allNodes) {
+            float d = Vector3.Distance(pos, n.position);
+            if(d < minDist) { minDist = d; best = n; }
         }
-
-        // Jump 连接
-        else if (horizontalDist <= jumpConnectionDistance && heightDiff <= maxJumpHeight)
-        {
-            float cost = horizontalDist + heightDiff;
-            a.edges.Add(new Edge(b, cost, EdgeType.Jump));
-            b.edges.Add(new Edge(a, cost, EdgeType.Jump));
-        }
+        return best;
     }
 
-    public Node GetClosestNode(Vector3 position)
+    public void MarkDirty()
     {
-        Node closest = null;
-        float minDist = Mathf.Infinity;
-
-        foreach (var node in nodes)
-        {
-            float dist = Vector3.Distance(position, node.position);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                closest = node;
-            }
-        }
-
-        return closest;
-    }
-
-    // 可视化
-    void OnDrawGizmos()
-    {
-        if (nodes == null) return;
-
-        Gizmos.color = Color.yellow;
-
-        foreach (var node in nodes)
-        {
-            Gizmos.DrawSphere(node.position, 0.2f);
-
-            foreach (var edge in node.edges)
-            {
-                if (edge.type == EdgeType.Walk)
-                    Gizmos.color = Color.green;
-                else
-                    Gizmos.color = Color.red;
-
-                Gizmos.DrawLine(node.position, edge.target.position);
-            }
-        }
+        graphDirty = true;
     }
 }

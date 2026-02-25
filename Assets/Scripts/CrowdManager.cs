@@ -16,6 +16,7 @@ public class CrowdManager : MonoBehaviour
 
     void SpawnGroup()
     {
+        Debug.Log($"SpawnGroup: numberOfSpiders {numberOfSpiders}");
         for (int i = 0; i < numberOfSpiders; i++)
         {
             // 1. 保持高度：使用你预定的 y 坐标，或者直接从 Prefab 获取
@@ -28,6 +29,7 @@ public class CrowdManager : MonoBehaviour
             // 这样生成的蜘蛛就会保留那个关键的 X: -90 旋转
             GameObject newSpider = Instantiate(spiderPrefab, spawnPos, spiderPrefab.transform.rotation);
             
+            newSpider.GetComponent<spider>().set_id(i);
             // 3. 物理初始化（防止刚体导致掉落）
             Rigidbody rb = newSpider.GetComponent<Rigidbody>();
             if (rb != null)
