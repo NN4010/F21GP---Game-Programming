@@ -3,19 +3,18 @@ using UnityEngine;
 
 public class Node
 {
-    // 世界坐标
     public Vector3 position;
 
-    // 邻接边（Walk / Jump）
+    // Adjacent edges (Walk / Jump)
     public List<Edge> edges = new List<Edge>();
 
-    // ===== A* 用的数据 =====
+    // ===== A* Data =====
 
-    public float gCost;   // 起点到当前
-    public float hCost;   // 当前到目标
+    public float gCost;   // From the starting point to the present
+    public float hCost;   // Current to target
     public float fCost => gCost + hCost;
 
-    public Node parent;   // 用于回溯路径
+    public Node parent;   // Used for path backtracking
 
     public Node(Vector3 pos)
     {
