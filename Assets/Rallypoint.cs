@@ -15,6 +15,11 @@ public class RallyPoint : MonoBehaviour
         transform.Rotate(0, 100 * Time.deltaTime, 0);
     }
 
+    public bool TakeSnack()
+    {
+        return true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !collected)

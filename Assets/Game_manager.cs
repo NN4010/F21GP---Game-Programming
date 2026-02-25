@@ -51,6 +51,10 @@ public class GameManager : MonoBehaviour
         UpdateCarryUI();
     }
 
+    public void AddRallyPoint(int rallyValue)
+    {
+    }
+
     void UpdateCarryUI()
     {
         carryText.text = "Snacks: " + carriedSnacks + "/" + requiredSnacks;
