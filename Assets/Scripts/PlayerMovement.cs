@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Enemy touch ");
+            GameManager.instance.TakeDamage();
         }
     }
 }

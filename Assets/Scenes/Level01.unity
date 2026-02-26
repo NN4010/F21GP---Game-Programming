@@ -6079,7 +6079,7 @@ MonoBehaviour:
   startText: {fileID: 1186268494}
   floatingRallyText: {fileID: 2094270391}
   winByRallyPoints: 1
-  requiredRallyPoints: 15
+  requiredRallyPoints: 5
   winBySurvival: 0
   survivalTime: 0
   winByFinishPoint: 0
@@ -8460,7 +8460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80801bd199703de48846b2fc6ce2a38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   separationDistance: 1.5
   separationWeight: 2
 --- !u!54 &1336305390
