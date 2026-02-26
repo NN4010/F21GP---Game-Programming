@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 120f;
     private float timeRemaining;
 
+    [Header("UI Text Elements")]
+    public TMP_Text rallyText;
+    public TMP_Text livesText;
+
     [Header("UI")]
     public TMP_Text carryText;
     public TMP_Text timerText;
@@ -27,6 +31,17 @@ public class GameManager : MonoBehaviour
     public TMP_Text startText;
     public TMP_Text floatingRallyText; // assign FloatingRallyText from FloatingTextCanvas here
 
+    [Header("Win Conditions")]
+public bool winByRallyPoints = false;
+public int requiredRallyPoints = 5;
+
+
+public bool winBySurvival = false;
+public float survivalTime = 60f;
+
+public bool winByFinishPoint = false;
+
+private float survivalTimer = 0f;
 
     private bool gameOver = false;
 
@@ -39,28 +54,41 @@ public class GameManager : MonoBehaviour
     {
         currentLives = maxLives;
         timeRemaining = timeLimit;
+        messageText.gameObject.SetActive(false);
 
         UpdateCarryUI();
         UpdateLivesUI();
+        UpdateLivesText();  
+        UpdateRallyUI();
         StartCoroutine(ShowStartMessage());
     }
 
     void Update()
+{
+    if (gameOver) return;
+
+    // Countdown timer (Lose condition)
+    timeRemaining -= Time.deltaTime;
+
+    if (timerText != null)
+        timerText.text = "Time: " + Mathf.Ceil(timeRemaining);
+
+    if (timeRemaining <= 0)
     {
-        if (gameOver) return;
+        LoseGame();
+    }
 
-        // Timer countdown
-        timeRemaining -= Time.deltaTime;
-        if (timerText != null)
-        {
-            timerText.text = "Time: " + Mathf.Ceil(timeRemaining);
-        }
+    // Survival win condition
+    if (winBySurvival)
+    {
+        survivalTimer += Time.deltaTime;
 
-        if (timeRemaining <= 0)
+        if (survivalTimer >= survivalTime)
         {
-            LoseGame();
+            WinGame();
         }
     }
+}
 
     IEnumerator ShowStartMessage()
     {
@@ -77,12 +105,24 @@ public class GameManager : MonoBehaviour
 {
     rallyPoints += amount;
 
-    // Show floating text above player
+    UpdateRallyUI();
+
     if (floatingRallyText != null)
-    {
         StartCoroutine(FloatingTextRoutine(amount));
+
+    if (winByRallyPoints && rallyPoints >= requiredRallyPoints)
+    {
+        WinGame();
     }
 }
+
+    void UpdateRallyUI()
+{
+    if (rallyText != null)
+        rallyText.text = "Rally: " + rallyPoints + "/" + requiredRallyPoints;
+}
+
+
 
     // Called by snack pickup
     public void AddSnack(int amount)
@@ -102,6 +142,11 @@ public class GameManager : MonoBehaviour
             carryText.text = "Snacks: " + carriedSnacks + "/" + requiredSnacks;
     }
 
+    void UpdateLivesText()
+{
+    if (livesText != null)
+        livesText.text = "Lives: " + currentLives;
+}
     // Called by enemy hitting player
     public void TakeDamage()
     {
@@ -109,6 +154,8 @@ public class GameManager : MonoBehaviour
 
         currentLives--;
         UpdateLivesUI();
+        UpdateLivesUI();      
+        UpdateLivesText();    
 
         if (currentLives <= 0)
         {
@@ -130,14 +177,20 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         if (messageText != null)
-            messageText.text = "You Win!";
+        {
+        messageText.gameObject.SetActive(true);
+        messageText.text = "You Win!";
+        }
     }
 
     void LoseGame()
     {
         gameOver = true;
         if (messageText != null)
-            messageText.text = "You Lose!";
+        {
+        messageText.gameObject.SetActive(true);
+        messageText.text = "You Lose!";
+        }
     }
 
     // -------- Floating Rally Text Methods --------
@@ -168,4 +221,13 @@ public class GameManager : MonoBehaviour
     floatingRallyText.transform.localPosition = startPos; // reset position
     floatingRallyText.gameObject.SetActive(false);       // hide text
 }
+
+public void WinFromFinish()
+{
+    if (!gameOver && winByFinishPoint)
+    {
+        WinGame();
+    }
+}
+
 }
