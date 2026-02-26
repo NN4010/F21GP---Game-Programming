@@ -45,6 +45,10 @@ private float survivalTimer = 0f;
 
     private bool gameOver = false;
 
+[Header("Damage Settings")]
+public float damageCooldown = 1f;
+private float lastDamageTime = -999f;
+
     void Awake()
     {
         instance = this;
@@ -147,11 +151,16 @@ private float survivalTimer = 0f;
     if (livesText != null)
         livesText.text = "Lives: " + currentLives;
 }
+
     // Called by enemy hitting player
     public void TakeDamage()
     {
         if (gameOver) return;
 
+        if (Time.time - lastDamageTime < damageCooldown)
+            return;
+        Debug.Log($"TakeDamage {currentLives}");
+        lastDamageTime = Time.time;
         currentLives--;
         UpdateLivesUI();
         UpdateLivesUI();      
