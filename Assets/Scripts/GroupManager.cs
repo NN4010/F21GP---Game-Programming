@@ -65,7 +65,7 @@ public class GroupManager : MonoBehaviour
 
         Debug.Log($"[ComputePath] Pathfinding from Node: {startNode.position} to Node: {targetNode.position}");
 
-        currentPath = AStar.FindPath(startNode, targetNode);
+        currentPath = AStar.FindPath(startNode, targetNode, graph.allNodes);
 
         if (currentPath != null && currentPath.Count > 0)
         {
@@ -87,7 +87,7 @@ public class GroupManager : MonoBehaviour
         return sum / members.Count;
     }
 
-    // Spider 自动注册
+   
     public void Register(IGroupMember spider)
     {
         if (!members.Contains(spider))

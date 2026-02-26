@@ -23,7 +23,7 @@ public class DynamicObstacle : MonoBehaviour
             Debug.Log($"DynamicObstacle update dist1 {dist}");
             if (graph != null)
                 Debug.Log($"DynamicObstacle update dist2 {dist}");
-                graph.MarkDirty();   // 通知更新
+                graph.MarkDirty(); 
 
             lastPosition = transform.position;
         }

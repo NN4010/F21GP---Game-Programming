@@ -3,7 +3,11 @@ using UnityEngine;
 
 public static class AStar
 {
-    public static List<Node> FindPath(Node start, Node goal)
+   public static List<Node> FindPath(
+    Node start,
+    Node goal,
+    List<Node> allNodes
+    )
     {
         if (start == null || goal == null)
             return null;
@@ -15,7 +19,7 @@ public static class AStar
         HashSet<Node> closedSet = new HashSet<Node>();
 
         // 初始化
-        ResetAllNodes(start);
+        ResetAllNodes(allNodes);
 
         start.gCost = 0;
         start.hCost = Heuristic(start, goal);
@@ -96,16 +100,13 @@ public static class AStar
         return path;
     }
 
-    static void ResetAllNodes(Node start)
+    static void ResetAllNodes(List<Node> allNodes)
     {
-        // 简化版本：只清理访问到的链条
-        Node current = start;
-        while (current != null)
+        foreach (Node node in allNodes)
         {
-            current.gCost = 0;
-            current.hCost = 0;
-            current.parent = null;
-            current = current.parent;
+            node.gCost = float.MaxValue;
+            node.hCost = 0;
+            node.parent = null;
         }
     }
 }

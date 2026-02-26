@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class NavigationGraph : MonoBehaviour
 {
-    public float nodeSpacing = 1.5f; // 节点间距
+    public float nodeSpacing = 1.5f;
     public Vector2 gridSize = new Vector2(20, 20);
     public List<Node> allNodes = new List<Node>();
     public static NavigationGraph Instance;
@@ -40,9 +40,8 @@ public class NavigationGraph : MonoBehaviour
         for (float x = -gridSize.x/2; x < gridSize.x/2; x += nodeSpacing) {
             for (float z = -gridSize.y/2; z < gridSize.y/2; z += nodeSpacing) {
                 attemptCount++;
-                Vector3 pos = transform.position + new Vector3(x, 0.5f, z); // 稍微抬高一点 Y
+                Vector3 pos = transform.position + new Vector3(x, 0.5f, z);
 
-                // 增加搜索半径到 2.0f 确保能抓到地面
                 if (NavMesh.SamplePosition(pos, out NavMeshHit hit, 2.0f, NavMesh.AllAreas)) {
                     allNodes.Add(new Node(hit.position));
                 }
@@ -55,11 +54,10 @@ public class NavigationGraph : MonoBehaviour
         if (allNodes.Count == 0) {
             Debug.LogError("!!! ALLNODES IS ZERO !!! 1. Check if NavMesh is Baked. 2. Check if object is near the floor.");
         }
-        // 2. 连线：使用 Raycast 避开墙壁
         foreach (Node a in allNodes) {
             foreach (Node b in allNodes) {
                 float dist = Vector3.Distance(a.position, b.position);
-                if (dist > 0 && dist <= nodeSpacing * 1.5f) {
+                if (dist > 0 && dist <= nodeSpacing * 2.2f) {
                     if (!NavMesh.Raycast(a.position, b.position, out NavMeshHit hit, NavMesh.AllAreas))
                         a.edges.Add(new Edge(b, dist, EdgeType.Walk));
                 }
