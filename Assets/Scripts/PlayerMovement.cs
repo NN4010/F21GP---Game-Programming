@@ -97,4 +97,12 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawLine(origin, origin + Vector3.down * (groundCheckDistance + 0.1f));
         Gizmos.DrawWireSphere(transform.position, pickupRange);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy touch ");
+        }
+    }
 }
